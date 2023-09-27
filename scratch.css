@@ -1,0 +1,50 @@
+
+@media (max-width: 425px) {
+    .gallery-image {
+      width: 280px;
+      height: auto;
+    }
+  
+    .section-image-gallery {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      column-gap: 15px;
+  
+      width: 100%;
+      z-index: 10;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .section2-title-shape-container {
+      width: 300px;
+      height: auto;
+      position: absolute;
+      top: -85px;
+      left: 15%;
+      z-index: 1;
+    }
+  
+    .section-text {
+      font-size: 26.64px;
+      color: #71192e;
+      z-index: 20;
+      text-align: center;
+      position: absolute;
+      top: 27%;
+    }
+  
+    .section2-title-text {
+      font-size: 38.74px;
+      color: #71192e;
+  
+      z-index: 2;
+      text-align: left;
+      position: absolute;
+      top: 3%;
+      left: 20%;
+      width: 275px;
+    }
+  }

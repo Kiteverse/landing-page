@@ -1,0 +1,11 @@
+.contact-form-wrapper {
+    width: 100vw;
+    height: auto;
+    margin: 0;
+    padding: 0px 0px;
+    overflow-y: hidden;
+}
+
+.contact-form-wrapper iframe {
+    background-color: #f2f2f2; /* Change this to your desired color */
+}

@@ -1,0 +1,138 @@
+.App {
+  text-align: center;
+  height: max-content;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  width: 100%;
+
+  font-family: "Inter";
+  font-weight: 400;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "Effra";
+  src: url("../src/assets/fonts/font/Effra.eot");
+  src: local("Effra"),
+    url("../src/assets/fonts/font/Effra.eot?#iefix") format("embedded-opentype"),
+    url("../src/assets/fonts/font/Effra.woff2") format("woff2"),
+    url("../src/assets/fonts/font/Effra.woff") format("woff"),
+    url("../src/assets/fonts/font/Effra.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Effra";
+  src: url("../src/assets/fonts/font/Effra-Italic.eot");
+  src: local("Effra Italic"), local("Effra-Italic"),
+    url("../src/assets/fonts/font/Effra-Italic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../src/assets/fonts/font/Effra-Italic.woff2") format("woff2"),
+    url("../src/assets/fonts/font/Effra-Italic.woff") format("woff"),
+    url("../src/assets/fonts/font/Effra-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Effra";
+  src: url("../src/assets/fonts/font/Effra-Medium.eot");
+  src: local("Effra Medium"), local("Effra-Medium"),
+    url("../src/assets/fonts/font/Effra-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("../src/assets/fonts/font/Effra-Medium.woff2") format("woff2"),
+    url("../src/assets/fonts/font/Effra-Medium.woff") format("woff"),
+    url("../src/assets/fonts/font/Effra-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Effra";
+  src: url("../src/assets/fonts/font/Effra-Bold.eot");
+  src: local("Effra Bold"), local("Effra-Bold"),
+    url("../src/assets/fonts/font/Effra-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../src/assets/fonts/font/Effra-Bold.woff2") format("woff2"),
+    url("../src/assets/fonts/font/Effra-Bold.woff") format("woff"),
+    url("../src/assets/fonts/font/Effra-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Effra";
+  src: url("../src/assets/fonts/font/Effra-Heavy.eot");
+  src: local("Effra Heavy"), local("Effra-Heavy"),
+    url("../src/assets/fonts/font/Effra-Heavy.eot?#iefix")
+      format("embedded-opentype"),
+    url("../src/assets/fonts/font/Effra-Heavy.woff2") format("woff2"),
+    url("../src/assets/fonts/font/Effra-Heavy.woff") format("woff"),
+    url("../src/assets/fonts/font/Effra-Heavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MPlus";
+  src: url("../src/assets/fonts/mplus-2m-regular.otf");
+  src: local("MPlus Regular"), local("MPlus-Regular"),
+    url("../src/assets/fonts/mplus-2m-regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MPlus";
+  src: url("../src/assets/fonts/mplus-2m-bold.otf");
+  src: local("MPlus Bold"), local("MPlus-Bold"),
+    url("../src/assets/fonts/mplus-2m-bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MPlus";
+  src: url("../src/assets/fonts/mplus-2m-medium.otf");
+  src: local("MPlus Medium"), local("MPlus-Medium"),
+    url("../src/assets/fonts/mplus-2m-medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+.slide-in-bottom {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 1s;
+}
+
+.slide-in-bottom.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.slide-in-top {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 1s;
+}
+
+.slide-in-top.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.scale-up {
+  transform: scale(0.5);
+  opacity: 0;
+  transition: all 1s;
+}
+
+.scale-up.show {
+  transform: scale(1);
+  opacity: 1;
+}

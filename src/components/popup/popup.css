@@ -1,0 +1,54 @@
+.flex-box-kite-sentence-container-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  row-gap: 40px;
+  margin-bottom: 15px;
+}
+
+.flex-box-kite-sentence-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  row-gap: 40px;
+  margin-bottom: 15px;
+}
+
+.flex-box-kite-sentence-container-overridden {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  row-gap: 0px;
+  margin-bottom: 0px;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers the images horizontally. Remove if not needed. */
+}
+
+.image-container img {
+  width: calc(
+    100% / 3 - 10px
+  ); /* Divide by 3 and subtract a little for margin */
+  margin: 5px; /* Some space between images */
+}
+
+@media (max-width: 500px) {
+  .flex-box-kite-sentence-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    row-gap: 40px;
+    margin-bottom: 25px;
+  }
+}
