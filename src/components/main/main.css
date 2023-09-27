@@ -171,7 +171,7 @@
 }
 
 .main-logo {
-  width: 354px;
+  width: 254px;
   height: auto;
   cursor: pointer;
 }
@@ -379,6 +379,10 @@
 }
 .text-align-center {
   text-align: center;
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 .popup-prompt1 {

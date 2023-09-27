@@ -20,8 +20,11 @@ import sponsor7 from '../../assets/images/sponsors/sponsor7.svg';
 import FormVerse from '../form-verse/FormVerse';
 
 import './popup.css';
+import { useState } from 'react';
 
 export function Popup({ visibilityControl, textSelector }) {
+    const [verseSubmit, setVerseSubmit] = useState(false);
+
     const kiteSrc = [
         kite1,
         kite2,
@@ -52,6 +55,10 @@ export function Popup({ visibilityControl, textSelector }) {
         setShow(false)
     }
 
+    const forceSubmit = () => {
+        setVerseSubmit(true);
+    }
+
     return (
         <div>
             {show &&
@@ -59,6 +66,12 @@ export function Popup({ visibilityControl, textSelector }) {
                     <div className='close-popup'>
                         <img onClick={() => closePopup()} src={closeLogo}></img>
                     </div>
+
+
+                    {
+                        textSelector === 'verse_message' &&
+                        <>asfasf</>
+                    }
 
                     {
                         textSelector === '4' &&
@@ -145,17 +158,17 @@ export function Popup({ visibilityControl, textSelector }) {
                                         }
                                         {
                                             (index === 8) &&
-                                            <span className='bold-text popup-prompt1'>{text}</span>
+                                            <span onClick={() => forceSubmit()} className='bold-text clickable popup-prompt1'>{text}</span>
 
                                         }
                                         {
                                             (index === 9) &&
-                                            <span className='bold-text popup-prompt2'>{text}</span>
+                                            <span onClick={() => forceSubmit()} className='bold-text clickable popup-prompt2'>{text}</span>
 
                                         }
                                         {
                                             (index === 9) &&
-                                            <FormVerse genericPopupControl={setShow} />
+                                            <FormVerse genericPopupControl={setShow} submitControl={[verseSubmit, setVerseSubmit]} />
                                         }
                                     </div>
 
@@ -169,11 +182,11 @@ export function Popup({ visibilityControl, textSelector }) {
                         <div className={'flex-box-popup-wide'}>
                             {
                                 content && content[textSelector].map((text, index) => (
-                                    <div className='flex-box-kite-sentence-container'>
+                                    <div key={index} className='flex-box-kite-sentence-container'>
                                         {
-                                            textSelector === '3' && index !== 0 && <img src={kiteSrc[index - 1]}></img>
+                                            textSelector === '3' && index !== 0 && <img key={index} src={kiteSrc[index - 1]}></img>
                                         }
-                                        <span className={''}>{text}</span>
+                                        <span key={index} className={''}>{text}</span>
                                     </div>
                                 ))
                             }
@@ -185,11 +198,11 @@ export function Popup({ visibilityControl, textSelector }) {
                         <div className={textSelector === '3' ? 'flex-box-popup popup-custom-text-layout flex-align-items-start' : 'flex-box-popup'}>
                             {
                                 content && content[textSelector].map((text, index) => (
-                                    <div className='flex-box-kite-sentence-container'>
+                                    <div key={index} className='flex-box-kite-sentence-container'>
                                         {
-                                            textSelector === '3' && index !== 0 && <img src={kiteSrc[index - 1]}></img>
+                                            textSelector === '3' && index !== 0 && <img key={index} src={kiteSrc[index - 1]}></img>
                                         }
-                                        <span className={index === 0 && textSelector === '3' ? 'bold-text popup-text-margin-b' : ''}>{text}</span>
+                                        <span key={index} className={index === 0 && textSelector === '3' ? 'bold-text popup-text-margin-b' : ''}>{text}</span>
                                     </div>
                                 ))
                             }

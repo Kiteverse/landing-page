@@ -7,11 +7,12 @@ import { Popup } from '../popup/popup';
 import { sendVerseFeedback } from '../feedback/send';
 
 
-function FormVerse({ genericPopupControl }) {
+function FormVerse({ genericPopupControl, submitControl }) {
     const setShowPopup = genericPopupControl;
     const [startTime, setStartTime] = useState(null);
     const [showMessage, setShowMessage] = useState(false);
 
+    const [submitTrigger, setSubmitTrigger] = submitControl;
 
     const form = useRef();
 
@@ -23,6 +24,15 @@ function FormVerse({ genericPopupControl }) {
 
     }, []);
 
+    useEffect(() => {
+        async function submit() {
+            if (submitTrigger) {
+                await onSubmitForm();
+            }
+        }
+        submit();
+
+    }, [submitTrigger]);
 
 
     const onChangeVerse = (event) => {
@@ -31,7 +41,7 @@ function FormVerse({ genericPopupControl }) {
 
 
     const onSubmitForm = async (e) => {
-        e.preventDefault();
+        if (e) e.preventDefault();
 
         if (verse.length < 1) {
             return
@@ -55,7 +65,9 @@ function FormVerse({ genericPopupControl }) {
 
         sendVerseFeedback(verse);
         setShowMessage(true);
+        setSubmitTrigger(false);
 
+        console.log(`uploaded`)
         setVerse('');
     }
 
@@ -63,18 +75,30 @@ function FormVerse({ genericPopupControl }) {
 
     return (
 
+        <>
+            {
+                showMessage &&
+                <Popup
+                    visibilityControl={[showMessage, setShowMessage]}
+                    textSelector={'verse_message'}
+                />
+            }
 
-        <Form className='form-verse-col' ref={form} onSubmit={(e) => onSubmitForm(e)}>
-            <FormGroup controlId='verseForm.ControlVerse'>
-                <Form.Control
-                    className='verse-form-control'
-                    onChange={onChangeVerse}
-                    type='verse'
-                    value={verse}
-                    name='user_verse'
-                ></Form.Control>
-            </FormGroup>
-        </Form>
+            <Form className='form-verse-col' ref={form} onSubmit={(e) => onSubmitForm(e)}>
+                <FormGroup controlId='verseForm.ControlVerse'>
+                    <Form.Control
+                        className='verse-form-control'
+                        onChange={onChangeVerse}
+                        type='verse'
+                        value={verse}
+                        name='user_verse'
+                    ></Form.Control>
+                </FormGroup>
+            </Form>
+
+        </>
+
+
 
 
     );
