@@ -7,6 +7,7 @@ import emailLogo from '../../assets/images/email.svg';
 import emailjs from 'emailjs-com';
 import { send } from '../emailjs/emailjs';
 import { Popup } from '../popup/popup';
+import { sendEmailFeedback } from '../feedback/send';
 
 
 function ContactForm({ genericPopupControl }) {
@@ -22,8 +23,6 @@ function ContactForm({ genericPopupControl }) {
 
     useEffect(() => {
         setStartTime(new Date().getTime());
-        console.log(`shoudl set start time: `, new Date().getTime());
-        console.log(`set start time: `, startTime);
 
     }, []);
 
@@ -46,13 +45,6 @@ function ContactForm({ genericPopupControl }) {
         // Track time taken to fill form
         const endTime = new Date().getTime();
 
-        if (!startTime) {
-            console.log(`Start time null::::`, startTime)
-        }
-
-        console.log(`start tiem: `, startTime)
-
-        console.log(`end time; `, endTime)
         const timeTaken = (endTime - startTime) / 1000;
 
         // Prevent bots
@@ -64,7 +56,7 @@ function ContactForm({ genericPopupControl }) {
         if (!email) return;
 
 
-        await send(form.current);
+        await sendEmailFeedback(email);
 
         setShowMessage(true);
 

@@ -4,6 +4,7 @@ import { Button, Form, FormGroup } from 'react-bootstrap';
 
 import emailLogo from '../../assets/images/email.svg';
 import { Popup } from '../popup/popup';
+import { sendVerseFeedback } from '../feedback/send';
 
 
 function FormVerse({ genericPopupControl }) {
@@ -19,8 +20,6 @@ function FormVerse({ genericPopupControl }) {
 
     useEffect(() => {
         setStartTime(new Date().getTime());
-        console.log(`shoudl set start time: `, new Date().getTime());
-        console.log(`set start time: `, startTime);
 
     }, []);
 
@@ -43,13 +42,7 @@ function FormVerse({ genericPopupControl }) {
         // Track time taken to fill form
         const endTime = new Date().getTime();
 
-        if (!startTime) {
-            console.log(`Start time null::::`, startTime)
-        }
 
-        console.log(`start tiem: `, startTime)
-
-        console.log(`end time; `, endTime)
         const timeTaken = (endTime - startTime) / 1000;
 
         // Prevent bots
@@ -60,7 +53,7 @@ function FormVerse({ genericPopupControl }) {
 
         if (!verse) return;
 
-        console.log(`To submit to backend: ${verse}`);
+        sendVerseFeedback(verse);
         setShowMessage(true);
 
         setVerse('');

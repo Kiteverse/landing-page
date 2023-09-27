@@ -44,13 +44,11 @@ export function Popup({ visibilityControl, textSelector }) {
     const [show, setShow] = visibilityControl;
 
     const handleClickHighlight = (id) => {
-        console.log(`Clicking ${id}`)
 
         setShow(true);
     }
 
     const closePopup = () => {
-        console.log(`Closing`);
         setShow(false)
     }
 

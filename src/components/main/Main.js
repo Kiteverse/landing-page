@@ -29,13 +29,11 @@ function Main() {
     });
 
     const handleClickHighlight = (id) => {
-        console.log(`Clicking ${id}`)
         setPopupTextSelector(id);
         setShow(true);
     }
 
     const closePopup = () => {
-        console.log(`Closing`);
         setShow(false)
     }
 
@@ -63,36 +61,29 @@ function Main() {
             <div className='flex-box flex-col'>
 
                 <div className='padding-top-5 font-align-left'>
-                    <span className='font-32 font-effra-regular'>THIS IS OUR STORY IN THREE
-                        <span onClick={() => handleClickHighlight('1')} className='highlighted-word'> KITEVERSES:
-                        </span>
+                    <span className='font-32 font-effra-regular'>THIS IS OUR STORY IN THREE <span onClick={() => handleClickHighlight('1')} className='highlighted-word'>KITEVERSES:
+                    </span>
                     </span>
                 </div>
 
                 <div className='padding-top-3 font-align-left font-size-45 font-effra-regular'>
                     <div style={{ margin: 0, padding: 0, marginBottom: '5px' }}>
                         <span onClick={() => handleClickHighlight('2')} className='highlighted-word'>WE
-                        </span> BELIEVE THE WORLD NEEDS
-
-                        <span onClick={() => handleClickHighlight('3')} className='highlighted-word' style={{ cursor: 'pointer' }}>BETTER WRITING.
+                        </span> BELIEVE THE WORLD NEEDS <span onClick={() => handleClickHighlight('3')} className='highlighted-word' style={{ cursor: 'pointer' }}>BETTER WRITING.
                         </span>
                     </div>
                     <div style={{ margin: 0, padding: 0 }}>
-                        <span className='padding-top-1'>BECAUSE
-                            <span onClick={() => handleClickHighlight('change-begins-with')} className='highlighted-word'>CHANGE BEGINS WITH THE WORD.</span>
+                        <span className='padding-top-1'>BECAUSE <span onClick={() => handleClickHighlight('change-begins-with')} className='highlighted-word'>CHANGE BEGINS WITH THE WORD.</span>
                         </span>
                     </div>
 
                 </div>
 
                 <div className='padding-top-5 font-align-left font-effra-regular'>
-                    <span className='font-size-45'>SO WE CREATED A
-                        <span onClick={() => handleClickHighlight('5')} className='highlighted-word'>WRITING GAME</span>
-                        THAT
-                        <span
-                            onClick={() => handleClickHighlight('6')}
-                            className='highlighted-word'>PLAYS BETTER.
-                        </span>
+                    <span className='font-size-45'>SO WE CREATED A <span onClick={() => handleClickHighlight('5')} className='highlighted-word'>WRITING GAME</span> THAT <span
+                        onClick={() => handleClickHighlight('6')}
+                        className='highlighted-word'>PLAYS BETTER.
+                    </span>
                     </span>
                 </div>
 

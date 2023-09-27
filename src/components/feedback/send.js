@@ -1,10 +1,10 @@
 export const sendEmailFeedback = async (email) => {
     try {
-        const endpoint = `${process.env.REACT_APP_BACKEND_URL}/feedback/email`;
+        const endpoint = `${process.env.REACT_APP_BACKEND_URL}/api/v1/r1/feedback/email`;
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(email)
+            body: JSON.stringify({ email: email })
         };
 
 
@@ -23,11 +23,11 @@ export const sendEmailFeedback = async (email) => {
 
 export const sendVerseFeedback = async (verse) => {
     try {
-        const endpoint = `${process.env.REACT_APP_BACKEND_URL}/feedback/verse`;
+        const endpoint = `${process.env.REACT_APP_BACKEND_URL}/api/v1/r1/feedback/verse`;
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(verse)
+            body: JSON.stringify({ verse: verse })
         };
 
 
@@ -37,7 +37,8 @@ export const sendVerseFeedback = async (verse) => {
             throw new Error(`Server responded with error status: ${response.status}`);
         }
 
-        return await response.json();
+        const responseJson = await response.json();
+        return responseJson;
     } catch (error) {
         console.error(`Error sending verse feedback.`, error);
         throw error;
